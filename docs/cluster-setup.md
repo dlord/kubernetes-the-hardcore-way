@@ -1,13 +1,13 @@
 # Cluster Setup
 
 
-We will be setting up a 2 node cluster setup. One master node, and one regular node. For simplicity,
+We will be setting up a 2 node cluster. One master node, and one regular node. For simplicity,
 I will use the term _master_ and _slave_.
 
-Our master node will act as both the bootstrap node and the main control node. This will not run any
+Our master will act as both the bootstrap node and the main control node. This will not run any
 jobs except for certain things like Daemon Sets.
 
-Our slave node will run everything else.
+Our slave will run everything else.
 
 
 ## Linux Distro Requirements
