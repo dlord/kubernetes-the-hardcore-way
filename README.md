@@ -26,9 +26,10 @@ requirements. And if you're like me (I'm not a network guy), you'll be left scra
 And [Weave](https://www.weave.works), my favorite overlay network solution, does not provides a decent
 guide on how to properly install and debug if there's a problem!
 
-And the _best part about all of this_? EVERY SINGLE ONE OF THOSE GUIDES INSTALL KUBERNETES IN A DIFFERENT WAY!
+And the _best part about all of this_? **EVERY SINGLE ONE OF THOSE GUIDES INSTALL KUBERNETES IN A DIFFERENT WAY!**
 
-The available docs are in such poor shape, you would think they're trying to _force_ you to use AWS or GCP.
+The available docs are in such poor shape, you would think they're _trying to force you to use AWS
+or GCP_.
 
 This guide is for people looking for a sane way of installing a simple, production-grade Kubernetes installation without going insane.
 
@@ -38,7 +39,7 @@ This guide is for people looking for a sane way of installing a simple, producti
 This is for people who are looking to build their own Kubernetes cluster in their private data center
 or in a virtualized environment, without being shackled to things like Vagrant and AWS/GCP.
 
-For those who almost gave up, but didn't, this one's for you.
+For those who almost gave up, this one's for you.
 
 
 ## Objectives
@@ -52,3 +53,40 @@ At the end of this tutorial, you should be able to:
    * etcd, API Server, Controller Manager, and Scheduler running as docker containers in the master node
 3. Use Weave as the overlay network.
 4. Install DNS Addon
+
+I'll do my best to explain almost every part of the process, so you can better customize the cluster
+to suit your needs.
+
+
+## What's not available here
+
+Things that are better documented elsewhere, like how to install your favorite Linux distro and Docker.
+In which case, I will try to point you to the corresponding guide on how to install them.
+
+
+## What about CoreOS?
+
+I don't use it, so I can't write anything about it.
+
+There are plenty of guides for it already. This is for people who want to use their favorite distro
+like CentOS, Debian, or Ubuntu.
+
+
+## Requirements
+
+At the minimum, I will assume your distro uses Systemd, and it uses a x64 kernel that supports
+Docker and OverlayFS.
+
+You will need a copy of the [official binaries](https://github.com/kubernetes/kubernetes/releases).
+For this guide, we will use version 1.4.0. The steps outlined here should be applicable to later
+versions.
+
+If you are using an older release of Kubernetes, you will need to double check the flags used by
+the Kubernetes components. Some are considered deprecated or have been removed entirely.
+
+
+## Table of Contents
+
+* [Cluster Setup](docs/cluster-setup.md)
+* Preparation
+  * [Download the Official Binary](docs/download-kubernetes.md)
